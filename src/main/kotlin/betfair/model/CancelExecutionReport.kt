@@ -1,6 +1,6 @@
 package betfair.model
 
-data class CancelExecutionReport internal constructor(
+internal data class CancelExecutionReport(
 		val customerRef: String? = null,
 		val status: ExecutionReportStatus,
 		val errorCode: ExecutionReportErrorCode? = null,

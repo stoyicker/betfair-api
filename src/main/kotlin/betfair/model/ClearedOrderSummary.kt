@@ -2,7 +2,7 @@ package betfair.model
 
 import java.util.Date
 
-data class ClearedOrderSummary internal constructor(
+internal data class ClearedOrderSummary(
 		val eventTypeId: EventTypeId? = null,
 		val eventId: EventId? = null,
 		val marketId: MarketId? = null,

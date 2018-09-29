@@ -2,7 +2,7 @@ package betfair.model
 
 import java.util.Date
 
-data class MarketBook internal constructor(
+internal data class MarketBook(
 		val marketId: String,
 		val isMarketDataDelayed: Boolean,
 		val status: MarketStatus? = null,

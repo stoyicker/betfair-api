@@ -1,6 +1,6 @@
 package betfair.model
 
-data class MarketLicence internal constructor(
+internal data class MarketLicence(
 		val wallet: String,
 		val rules: String? = null,
 		val rulesHasDate: Boolean? = null,

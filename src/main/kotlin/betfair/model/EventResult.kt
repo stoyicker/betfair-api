@@ -1,5 +1,5 @@
 package betfair.model
 
-data class EventResult internal constructor(
+internal data class EventResult(
 		val event: Event? = null,
 		val marketCount: Int? = null)

@@ -1,7 +1,7 @@
 package betfair.model
 
 @Deprecated(message = "marketType - Legacy Data", replaceWith = ReplaceWith("MarketType"))
-enum class LegacyMarketType {
+internal enum class LegacyMarketType {
 	A,
 	L,
 	O,

@@ -1,6 +1,6 @@
 package betfair.model
 
-enum class RollupModel {
+internal enum class RollupModel {
 	STAKE,
 	PAYOUT,
 	MANAGED_LIABILITY,

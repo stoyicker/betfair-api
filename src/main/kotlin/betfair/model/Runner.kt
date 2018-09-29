@@ -2,7 +2,7 @@ package betfair.model
 
 import java.util.Date
 
-data class Runner internal constructor(
+internal data class Runner(
 		val selectionId: Long,
 		val handicap: Double,
 		val status: RunnerStatus,

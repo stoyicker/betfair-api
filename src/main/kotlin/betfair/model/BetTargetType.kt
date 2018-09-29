@@ -1,6 +1,6 @@
 package betfair.model
 
-enum class BetTargetType {
+internal enum class BetTargetType {
 	BACKERS_PROFIT,
 	PAYOUT
 }

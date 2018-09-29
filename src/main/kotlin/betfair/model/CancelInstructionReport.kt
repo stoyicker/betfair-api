@@ -2,7 +2,7 @@ package betfair.model
 
 import java.util.Date
 
-data class CancelInstructionReport internal constructor(
+internal data class CancelInstructionReport(
 		val status: InstructionReportStatus,
 		val errorCode: InstructionReportErrorCode? = null,
 		val instruction: CancelInstruction? = null,

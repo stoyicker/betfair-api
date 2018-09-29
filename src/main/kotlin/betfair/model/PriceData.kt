@@ -1,6 +1,6 @@
 package betfair.model
 
-enum class PriceData {
+internal enum class PriceData {
 	SP_AVAILABLE,
 	SP_TRADED,
 	EX_BEST_OFFERS,

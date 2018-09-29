@@ -2,7 +2,7 @@ package betfair.model
 
 import java.util.Date
 
-data class Event internal constructor(
+internal data class Event(
 		val id: String? = null,
 		val name: String? = null,
 		val countryCode: String? = null,

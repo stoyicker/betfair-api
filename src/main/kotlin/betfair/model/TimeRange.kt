@@ -2,6 +2,6 @@ package betfair.model
 
 import java.util.Date
 
-data class TimeRange internal constructor(
+internal data class TimeRange(
 		val from: Date? = null,
 		val to: Date? = null)

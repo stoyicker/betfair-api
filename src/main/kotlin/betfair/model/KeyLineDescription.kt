@@ -1,3 +1,3 @@
 package betfair.model
 
-data class KeyLineDescription internal constructor(val keyLine: List<KeyLineSelection>? = null)
+internal data class KeyLineDescription(val keyLine: List<KeyLineSelection>? = null)

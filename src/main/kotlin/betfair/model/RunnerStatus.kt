@@ -1,6 +1,6 @@
 package betfair.model
 
-enum class RunnerStatus {
+internal enum class RunnerStatus {
 	ACTIVE,
 	WINNER,
 	LOSER,

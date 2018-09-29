@@ -1,6 +1,6 @@
 package betfair.model
 
-data class LimitOrder internal constructor(
+internal data class LimitOrder(
 		val size: Double,
 		val price: Double,
 		val persistenceType: PersistenceType,

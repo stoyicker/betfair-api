@@ -1,6 +1,6 @@
 package betfair.model
 
-data class MarketFilter internal constructor(
+internal data class MarketFilter(
         val textQuery: String? = null,
         val exchangeIds: List<String>? = null,
         val eventTypeIds: List<String>? = null,

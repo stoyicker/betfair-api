@@ -1,5 +1,5 @@
 package betfair.model
 
-enum class TimeInForce {
+internal enum class TimeInForce {
 	FILL_OR_KILL
 }

@@ -1,6 +1,6 @@
 package betfair.model
 
-enum class ExecutionReportStatus {
+internal enum class ExecutionReportStatus {
 	SUCCESS,
 	FAILURE,
 	PROCESSED_WITH_ERRORS,

@@ -2,7 +2,7 @@ package betfair.model
 
 import java.util.*
 
-data class MarketCatalogue internal constructor(
+internal data class MarketCatalogue(
 		val marketId: String,
 		val marketName: String,
 		val marketStartTime: Date? = null,

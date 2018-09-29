@@ -1,6 +1,6 @@
 package betfair.model
 
-data class PriceProjection internal constructor(
+internal data class PriceProjection(
 		val priceData: List<PriceData>? = null,
 		val exBestOffersOverrides: ExBestOffersOverrides? = null,
 		val virtualise: Boolean? = null,

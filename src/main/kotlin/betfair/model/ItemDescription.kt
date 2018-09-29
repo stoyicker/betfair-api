@@ -1,6 +1,6 @@
 package betfair.model
 
-data class ItemDescription internal constructor(
+internal data class ItemDescription(
 		val eventTypeDesc: String? = null,
 		val eventDesc: String? = null,
 		val marketDesc: String? = null,

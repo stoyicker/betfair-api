@@ -1,6 +1,6 @@
 package betfair.model
 
-enum class InstructionReportStatus {
+internal enum class InstructionReportStatus {
 	SUCCESS,
 	FAILURE,
 	TIMEOUT

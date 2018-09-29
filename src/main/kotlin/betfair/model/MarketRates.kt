@@ -1,5 +1,5 @@
 package betfair.model
 
-data class MarketRates internal constructor(
+internal data class MarketRates(
 		val marketBaseRate: Double,
 		val discountAllowed: Boolean)

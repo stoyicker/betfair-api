@@ -1,6 +1,6 @@
 package betfair.model
 
-data class ApiNgException internal constructor(
+internal data class ApiNgException(
 		val errorCode: ApiNgExceptionErrorCode?,
 		val requestUUID: String?,
 		val errorDetails: String?)

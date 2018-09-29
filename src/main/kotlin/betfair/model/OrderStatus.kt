@@ -1,6 +1,6 @@
 package betfair.model
 
-enum class OrderStatus {
+internal enum class OrderStatus {
 	PENDING,
 	EXECUTION_COMPLETE,
 	EXECUTABLE,

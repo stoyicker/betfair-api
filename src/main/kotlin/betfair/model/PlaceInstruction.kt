@@ -1,6 +1,6 @@
 package betfair.model
 
-data class PlaceInstruction internal constructor(
+internal data class PlaceInstruction(
 		val orderType: OrderType,
 		val selectionId: Long,
 		val handicap: Double? = null,

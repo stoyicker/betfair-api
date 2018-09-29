@@ -1,6 +1,6 @@
 package betfair.model
 
-enum class BetStatus {
+internal enum class BetStatus {
 	SETTLED,
 	VOIDED,
 	LAPSED,

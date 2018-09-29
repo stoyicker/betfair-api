@@ -1,6 +1,6 @@
 package betfair.model
 
-enum class GroupBy {
+internal enum class GroupBy {
 	EVENT_TYPE,
 	EVENT,
 	MARKET,

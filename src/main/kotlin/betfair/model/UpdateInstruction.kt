@@ -1,5 +1,5 @@
 package betfair.model
 
-data class UpdateInstruction internal constructor(
+internal data class UpdateInstruction(
 		val betId: String,
 		val newPersistenceType: PersistenceType)

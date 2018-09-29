@@ -1,6 +1,6 @@
 package betfair.model
 
-enum class OrderBy {
+internal enum class OrderBy {
 	BY_BET,
 	BY_MARKET,
 	BY_MATCH_TIME,

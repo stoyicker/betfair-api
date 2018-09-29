@@ -1,6 +1,6 @@
 package betfair.model
 
-enum class Side {
+internal enum class Side {
 	BACK,
 	LAY
 }

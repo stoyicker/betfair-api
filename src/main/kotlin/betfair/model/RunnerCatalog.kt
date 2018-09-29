@@ -1,6 +1,6 @@
 package betfair.model
 
-data class RunnerCatalog internal constructor(
+internal data class RunnerCatalog(
 		val selectionId: Long,
 		val runnerName: String,
 		val handicap: Double,

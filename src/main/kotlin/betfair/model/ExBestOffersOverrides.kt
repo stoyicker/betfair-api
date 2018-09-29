@@ -1,6 +1,6 @@
 package betfair.model
 
-data class ExBestOffersOverrides internal constructor(
+internal data class ExBestOffersOverrides(
 		val bestPricesDepth: Int? = null,
 		val rollupModel: RollupModel? = null,
 		val rollupLimit: Int? = null,

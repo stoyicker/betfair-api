@@ -1,5 +1,5 @@
 package betfair.model
 
-data class ReplaceInstruction internal constructor(
+internal data class ReplaceInstruction(
 		val betId: String,
 		val newPrice: Double)

@@ -1,5 +1,5 @@
 package betfair.model
 
-data class TimeRangeResult internal constructor(
+internal data class TimeRangeResult(
 		val timeRange: TimeRange? = null,
 		val marketCount: Int? = null)

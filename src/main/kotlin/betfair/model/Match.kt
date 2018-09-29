@@ -2,7 +2,7 @@ package betfair.model
 
 import java.util.Date
 
-data class Match internal constructor(
+internal data class Match(
 		val betId: String? = null,
 		val matchId: String? = null,
 		val side: Side,

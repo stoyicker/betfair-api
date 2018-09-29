@@ -2,7 +2,7 @@ package betfair.model
 
 import java.util.Date
 
-data class Order internal constructor(
+internal data class Order(
 		val betId: String,
 		val orderType: OrderType,
 		val status: OrderStatus,

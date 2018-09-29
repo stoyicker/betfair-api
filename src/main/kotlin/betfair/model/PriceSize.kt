@@ -1,5 +1,5 @@
 package betfair.model
 
-data class PriceSize internal constructor(
+internal data class PriceSize(
 		val price: Double,
 		val size: Double)

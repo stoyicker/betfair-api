@@ -1,5 +1,5 @@
 package betfair.model
 
-data class Competition internal constructor(
+internal data class Competition(
 		val id: String? = null,
 		val name: String? = null)

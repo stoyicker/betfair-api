@@ -1,4 +1,4 @@
 package betfair.model
 
-data class MarketVersion internal constructor(
+internal data class MarketVersion(
 		val version: Long? = null)

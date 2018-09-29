@@ -1,6 +1,6 @@
 package betfair.model
 
-enum class MarketProjection {
+internal enum class MarketProjection {
 	COMPETITION,
 	EVENT,
 	EVENT_TYPE,

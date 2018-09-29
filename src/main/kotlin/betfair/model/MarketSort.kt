@@ -1,6 +1,6 @@
 package betfair.model
 
-enum class MarketSort {
+internal enum class MarketSort {
 	MINIMUM_TRADED,
 	MAXIMUM_TRADED,
 	MINIMUM_AVAILABLE,

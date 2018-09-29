@@ -1,5 +1,5 @@
 package betfair.model
 
-data class VenueResult internal constructor(
+internal data class VenueResult(
 		val venue: String? = null,
 		val marketCount: Int? = null)

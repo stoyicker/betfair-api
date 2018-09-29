@@ -1,6 +1,6 @@
 package betfair.model
 
-enum class InstructionReportErrorCode {
+internal enum class InstructionReportErrorCode {
 	INVALID_BET_SIZE,
 	INVALID_RUNNER,
 	BET_TAKEN_OR_LAPSED,

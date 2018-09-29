@@ -1,6 +1,6 @@
 package betfair.model
 
-enum class ExecutionReportErrorCode {
+internal enum class ExecutionReportErrorCode {
 	ERROR_IN_MATCHER,
 	PROCESSED_WITH_ERRORS,
 	BET_ACTION_ERROR,

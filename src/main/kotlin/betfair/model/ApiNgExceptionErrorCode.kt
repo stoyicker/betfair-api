@@ -1,6 +1,6 @@
 package betfair.model
 
-enum class ApiNgExceptionErrorCode {
+internal enum class ApiNgExceptionErrorCode {
 	TOO_MUCH_DATA,
 	INVALID_INPUT_DATA,
 	INVALID_SESSION_INFORMATION,

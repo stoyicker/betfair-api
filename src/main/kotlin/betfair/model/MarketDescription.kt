@@ -2,7 +2,7 @@ package betfair.model
 
 import java.util.Date
 
-data class MarketDescription internal constructor(
+internal data class MarketDescription(
 		val persistenceEnabled: Boolean,
 		val bspMarket: Boolean,
 		val marketTime: Date,

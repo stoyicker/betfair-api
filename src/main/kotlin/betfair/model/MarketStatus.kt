@@ -1,6 +1,6 @@
 package betfair.model
 
-enum class MarketStatus {
+internal enum class MarketStatus {
 	INACTIVE,
 	OPEN,
 	SUSPENDED,

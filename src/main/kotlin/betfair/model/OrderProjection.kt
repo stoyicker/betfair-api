@@ -1,6 +1,6 @@
 package betfair.model
 
-enum class OrderProjection {
+internal enum class OrderProjection {
 	ALL,
 	EXECUTABLE,
 	EXECUTION_COMPLETE

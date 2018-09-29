@@ -1,6 +1,6 @@
 package betfair.model
 
-data class MarketLineRangeInfo internal constructor(
+internal data class MarketLineRangeInfo(
 		val maxUnitValue: Double,
 		val minUnitValue: Double,
 		val interval: Double,

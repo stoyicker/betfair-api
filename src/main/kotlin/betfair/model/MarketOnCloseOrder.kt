@@ -1,4 +1,4 @@
 package betfair.model
 
-data class MarketOnCloseOrder internal constructor(
+internal data class MarketOnCloseOrder(
 		val liability: Double)

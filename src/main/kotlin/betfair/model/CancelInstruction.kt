@@ -1,5 +1,5 @@
 package betfair.model
 
-data class CancelInstruction internal constructor(
+internal data class CancelInstruction(
 		val betId: String,
 		val sizeReduction: Double? = null)

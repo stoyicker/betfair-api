@@ -1,6 +1,6 @@
 package betfair.model
 
-data class StartingPrices internal constructor(
+internal data class StartingPrices(
 		val nearPrice: Double? = null,
 		val farPrice: Double? = null,
 		val backStakeTaken: List<PriceSize>? = null,

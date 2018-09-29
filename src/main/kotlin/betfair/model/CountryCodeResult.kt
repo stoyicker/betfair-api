@@ -1,5 +1,5 @@
 package betfair.model
 
-data class CountryCodeResult internal constructor(
+internal data class CountryCodeResult(
 		val countryCode: String,
 		val marketCount: Int)

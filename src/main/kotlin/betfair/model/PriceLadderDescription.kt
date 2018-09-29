@@ -1,3 +1,3 @@
 package betfair.model
 
-data class PriceLadderDescription internal constructor(val type: PriceLadderType? = null)
+internal data class PriceLadderDescription(val type: PriceLadderType? = null)

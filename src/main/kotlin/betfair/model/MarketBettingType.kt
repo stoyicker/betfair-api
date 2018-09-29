@@ -1,6 +1,6 @@
 package betfair.model
 
-enum class MarketBettingType {
+internal enum class MarketBettingType {
 	ODDS,
 	LINE,
 	@Deprecated(message = "Range Market - Now Deprecated")

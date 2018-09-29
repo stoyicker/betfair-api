@@ -1,6 +1,6 @@
 package betfair.model
 
-enum class TimeGranularity {
+internal enum class TimeGranularity {
 	DAYS,
 	HOURS,
 	MINUTES

@@ -1,5 +1,5 @@
 package betfair.model
 
-data class CurrentOrderSummaryReport internal constructor(
+internal data class CurrentOrderSummaryReport(
 		val currentOrders: List<CurrentOrderSummary>,
 		val moreAvailable: Boolean)

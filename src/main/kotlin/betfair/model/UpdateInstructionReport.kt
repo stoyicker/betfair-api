@@ -1,6 +1,6 @@
 package betfair.model
 
-data class UpdateInstructionReport internal constructor(
+internal data class UpdateInstructionReport(
 		val status: InstructionReportStatus,
 		val errorCode: InstructionReportErrorCode? = null,
 		val instruction: UpdateInstruction)

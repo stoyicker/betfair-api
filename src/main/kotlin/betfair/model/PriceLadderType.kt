@@ -1,6 +1,6 @@
 package betfair.model
 
-enum class PriceLadderType {
+internal enum class PriceLadderType {
 	CLASSIC,
 	FINEST,
 	LINE_RANGE

@@ -1,6 +1,6 @@
 package betfair.model
 
-enum class PersistenceType {
+internal enum class PersistenceType {
 	LAPSE,
 	PERSIST,
 	MARKET_ON_CLOSE
