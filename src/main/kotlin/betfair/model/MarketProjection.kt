@@ -1,0 +1,11 @@
+package betfair.model
+
+enum class MarketProjection {
+	COMPETITION,
+	EVENT,
+	EVENT_TYPE,
+	MARKET_START_TIME,
+	MARKET_DESCRIPTION,
+	RUNNER_DESCRIPTION,
+	RUNNER_METADATA
+}
