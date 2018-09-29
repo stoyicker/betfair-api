@@ -10,7 +10,7 @@ internal class BotLoginAuthenticator(
 		private val password: CharSequence) : Authenticator {
 	override fun authenticate(route: Route, response: Response) = when (response.priorResponse()) {
 		null -> response.request().newBuilder()
-				.addHeader(AuthenticationInterceptor.AUTHENTICATION_HEADER_NAME, requestSessionToken())
+				.addHeader(AuthenticationInterceptor.HEADER_NAME_AUTHENTICATION, requestSessionToken())
 				.build()
 		else -> null
 	}
