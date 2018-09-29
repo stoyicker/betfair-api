@@ -1,3 +1,3 @@
 package betfair.model
 
-typealias MarketType = String
+internal typealias MarketType = String

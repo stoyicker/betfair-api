@@ -1,3 +1,3 @@
 package betfair.model
 
-typealias Handicap = Double
+internal typealias Handicap = Double

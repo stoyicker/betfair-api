@@ -1,3 +1,3 @@
 package betfair.model
 
-typealias SelectionId = Long
+internal typealias SelectionId = Long

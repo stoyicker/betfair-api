@@ -1,3 +1,3 @@
 package betfair.model
 
-typealias CountryCode = String
+internal typealias CountryCode = String

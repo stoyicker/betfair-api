@@ -1,3 +1,3 @@
 package betfair.model
 
-typealias CompetitionId = String
+internal typealias CompetitionId = String

@@ -1,3 +1,3 @@
 package betfair.model
 
-typealias ExchangeId = String
+internal typealias ExchangeId = String

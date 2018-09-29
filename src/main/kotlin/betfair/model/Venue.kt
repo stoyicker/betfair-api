@@ -1,3 +1,3 @@
 package betfair.model
 
-typealias Venue = String
+internal typealias Venue = String

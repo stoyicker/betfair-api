@@ -1,3 +1,3 @@
 package betfair.model
 
-typealias Size = Double
+internal typealias Size = Double

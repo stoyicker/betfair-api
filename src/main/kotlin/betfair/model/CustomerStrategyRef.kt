@@ -1,3 +1,3 @@
 package betfair.model
 
-typealias CustomerStrategyRef = String
+internal typealias CustomerStrategyRef = String

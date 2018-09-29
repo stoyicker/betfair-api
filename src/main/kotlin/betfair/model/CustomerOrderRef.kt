@@ -1,3 +1,3 @@
 package betfair.model
 
-typealias CustomerOrderRef = String
+internal typealias CustomerOrderRef = String
