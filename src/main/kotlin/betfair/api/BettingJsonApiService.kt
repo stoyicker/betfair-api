@@ -1,53 +1,41 @@
 package betfair.api
 
-import betfair.model.BetId
-import betfair.model.BetStatus
+import betfair.api.model.CancelOrdersRequestBody
+import betfair.api.model.ListClearedOrdersRequestBody
+import betfair.api.model.ListCompetitionsRequestBody
+import betfair.api.model.ListCountriesRequestBody
+import betfair.api.model.ListCurrentOrdersRequestBody
+import betfair.api.model.ListEventTypesRequestBody
+import betfair.api.model.ListEventsRequestBody
+import betfair.api.model.ListMarketBookRequestBody
+import betfair.api.model.ListMarketCatalogueRequestBody
+import betfair.api.model.ListMarketProfitAndLossRequestBody
+import betfair.api.model.ListMarketTypesRequestBody
+import betfair.api.model.ListRunnerBookRequestBody
+import betfair.api.model.ListTimeRangesRequestBody
+import betfair.api.model.ListVenuesRequestBody
+import betfair.api.model.PlaceOrdersRequestBody
+import betfair.api.model.ReplaceOrdersRequestBody
+import betfair.api.model.UpdateOrdersRequestBody
 import betfair.model.CancelExecutionReport
-import betfair.model.CancelInstruction
 import betfair.model.ClearedOrderSummaryReport
 import betfair.model.CompetitionResult
 import betfair.model.CountryCodeResult
 import betfair.model.CurrentOrderSummaryReport
-import betfair.model.EventId
 import betfair.model.EventResult
-import betfair.model.EventTypeId
 import betfair.model.EventTypeResult
-import betfair.model.GroupBy
-import betfair.model.Locale
 import betfair.model.MarketBook
 import betfair.model.MarketCatalogue
-import betfair.model.MarketFilter
-import betfair.model.MarketId
 import betfair.model.MarketProfitAndLoss
-import betfair.model.MarketProjection
-import betfair.model.MarketSort
 import betfair.model.MarketTypeResult
-import betfair.model.MarketVersion
-import betfair.model.MatchProjection
-import betfair.model.OrderBy
-import betfair.model.OrderProjection
 import betfair.model.PlaceExecutionReport
-import betfair.model.PlaceInstruction
-import betfair.model.PriceProjection
 import betfair.model.ReplaceExecutionReport
-import betfair.model.ReplaceInstruction
-import betfair.model.RunnerId
-import betfair.model.SelectionId
-import betfair.model.Side
-import betfair.model.SortDir
-import betfair.model.TimeGranularity
-import betfair.model.TimeRange
 import betfair.model.TimeRangeResult
 import betfair.model.UpdateExecutionReport
-import betfair.model.UpdateInstruction
 import betfair.model.VenueResult
 import retrofit2.Call
+import retrofit2.http.Body
 import retrofit2.http.POST
-import java.util.Date
-
-// TODO Review all methods to add @Query(paramKey) annotations and review mandatory parameters
-// TODO Review the full response structure (potential wrapper?)
-// TODO Review exception strucutre correctness (wrapper maybe needed here too?)
 
 internal interface BettingJsonApiService {
 	companion object {
@@ -55,125 +43,53 @@ internal interface BettingJsonApiService {
 	}
 
 	@POST("listEventTypes")
-	fun listEventTypes(marketFilter: MarketFilter, locale: Locale): Call<List<EventTypeResult>>
+	fun listEventTypes(@Body body: ListEventTypesRequestBody): Call<List<EventTypeResult>>
 
 	@POST("listCompetitions")
-	fun listCompetitions(marketFilter: MarketFilter, locale: Locale): Call<List<CompetitionResult>>
+	fun listCompetitions(@Body body: ListCompetitionsRequestBody): Call<List<CompetitionResult>>
 
 	@POST("listTimeRanges")
-	fun listTimeRanges(marketFilter: MarketFilter, granularity: TimeGranularity): Call<List<TimeRangeResult>>
+	fun listTimeRanges(@Body body: ListTimeRangesRequestBody): Call<List<TimeRangeResult>>
 
 	@POST("listEvents")
-	fun listEvents(marketFilter: MarketFilter, locale: Locale): Call<List<EventResult>>
+	fun listEvents(@Body body: ListEventsRequestBody): Call<List<EventResult>>
 
 	@POST("listMarketTypes")
-	fun listMarketTypes(marketFilter: MarketFilter, locale: Locale): Call<List<MarketTypeResult>>
+	fun listMarketTypes(@Body body: ListMarketTypesRequestBody): Call<List<MarketTypeResult>>
 
 	@POST("listCountries")
-	fun listCountries(marketFilter: MarketFilter, locale: Locale): Call<List<CountryCodeResult>>
+	fun listCountries(@Body body: ListCountriesRequestBody): Call<List<CountryCodeResult>>
 
 	@POST("listVenues")
-	fun listVenues(marketFilter: MarketFilter, locale: Locale): Call<List<VenueResult>>
+	fun listVenues(@Body body: ListVenuesRequestBody): Call<List<VenueResult>>
 
 	@POST("listMarketCatalogue")
-	fun listMarketCatalogue(
-			marketFilter: MarketFilter,
-			marketProjection: List<MarketProjection>,
-			sort: MarketSort,
-			maxResults: Int,
-			locale: Locale): Call<List<MarketCatalogue>>
+	fun listMarketCatalogue(@Body body: ListMarketCatalogueRequestBody): Call<List<MarketCatalogue>>
 
 	@POST("listMarketBook")
-	fun listMarketBook(
-			marketIds: List<String>,
-			priceProjection: PriceProjection,
-			orderProjection: OrderProjection,
-			matchProjection: MatchProjection,
-			includeOverallPosition: Boolean,
-			partitionMatchedByStrategyRef: Boolean,
-			customerStrategyRefs: List<String>,
-			currencyCode: String,
-			locale: Locale,
-			matchedSince: Date,
-			betIds: List<BetId>): Call<List<MarketBook>>
+	fun listMarketBook(@Body body: ListMarketBookRequestBody): Call<List<MarketBook>>
 
 	@POST("listMarketBook")
-	fun listRunnerBook(
-			marketId: MarketId,
-			selectionId: SelectionId,
-			handicap: Double,
-			priceProjection: PriceProjection,
-			orderProjection: OrderProjection,
-			matchProjection: MatchProjection,
-			includeOverallPosition: Boolean,
-			partitionMatchedByStrategyRef: Boolean,
-			customerStrategyRefs: List<String>,
-			currencyCode: String,
-			locale: Locale,
-			matchedSince: Date,
-			betIds: List<BetId>): Call<List<MarketBook>>
+	fun listRunnerBook(@Body body: ListRunnerBookRequestBody): Call<List<MarketBook>>
 
 	@POST("listMarketProfitAndLoss")
-	fun listMarketProfitAndLoss(
-			marketIds: List<String>,
-			includeSettledBets: Boolean,
-			includeBspBets: Boolean,
-			netOfCommission: Boolean): Call<List<MarketProfitAndLoss>>
+	fun listMarketProfitAndLoss(@Body body: ListMarketProfitAndLossRequestBody): Call<List<MarketProfitAndLoss>>
 
 	@POST("listCurrentOrders")
-	fun listCurrentOrders(
-			betIds: List<BetId>,
-			marketIds: List<String>,
-			orderProjection: OrderProjection,
-			placedDateRange: TimeRange,
-			dateRange: TimeRange,
-			orderBy: OrderBy,
-			sortDir: SortDir,
-			fromRecord: Int,
-			recordCount: Int): Call<CurrentOrderSummaryReport>
+	fun listCurrentOrders(@Body body: ListCurrentOrdersRequestBody): Call<CurrentOrderSummaryReport>
 
 	@POST("listClearedOrders")
-	fun listClearedOrders(
-			betStatus: BetStatus,
-			eventTypeIds: List<EventTypeId>,
-			eventIds: List<EventId>,
-			marketIds: List<MarketId>,
-			runnerIds: List<RunnerId>,
-			betIds: List<BetId>,
-			side: Side,
-			settledDateRange: TimeRange,
-			groupBy: GroupBy,
-			includeItemDescription: Boolean,
-			locale: Locale,
-			fromRecord: Int,
-			recordCount: Int): Call<ClearedOrderSummaryReport>
+	fun listClearedOrders(@Body body: ListClearedOrdersRequestBody): Call<ClearedOrderSummaryReport>
 
 	@POST("placeOrders")
-	fun placeOrders(
-			marketId: String,
-			instructions: List<PlaceInstruction>,
-			customerRef: String,
-			marketVersion: MarketVersion,
-			customerStrategyRef: String,
-			async: Boolean): Call<PlaceExecutionReport>
+	fun placeOrders(@Body body: PlaceOrdersRequestBody): Call<PlaceExecutionReport>
 
 	@POST("cancelOrders")
-	fun cancelOrders(
-			marketId: String,
-			instructions: List<CancelInstruction>,
-			customerRef: String): Call<CancelExecutionReport>
+	fun cancelOrders(@Body body: CancelOrdersRequestBody): Call<CancelExecutionReport>
 
 	@POST("replaceOrders")
-	fun replaceOrders(
-			marketId: String,
-			instructions: List<ReplaceInstruction>,
-			customerRef: String,
-			marketVersion: MarketVersion,
-			async: Boolean): Call<ReplaceExecutionReport>
+	fun replaceOrders(@Body body: ReplaceOrdersRequestBody): Call<ReplaceExecutionReport>
 
 	@POST("updateOrders")
-	fun updateOrders(
-			marketId: String,
-			instructions: List<UpdateInstruction>,
-			customerRef: String): Call<UpdateExecutionReport>
+	fun updateOrders(@Body body: UpdateOrdersRequestBody): Call<UpdateExecutionReport>
 }
