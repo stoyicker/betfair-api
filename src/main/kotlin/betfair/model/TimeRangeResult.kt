@@ -1,5 +1,9 @@
 package betfair.model
 
+import com.squareup.moshi.Json
+
 internal data class TimeRangeResult(
-		val timeRange: TimeRange? = null,
-		val marketCount: Int? = null)
+		@Json(name = "timeRange")
+		private val timeRange: TimeRange? = null,
+		@Json(name = "marketCount")
+		private val marketCount: Int? = null)

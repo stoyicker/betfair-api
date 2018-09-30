@@ -1,6 +1,11 @@
 package betfair.model
 
+import com.squareup.moshi.Json
+
 internal data class UpdateInstructionReport(
-		val status: InstructionReportStatus,
-		val errorCode: InstructionReportErrorCode? = null,
-		val instruction: UpdateInstruction)
+		@Json(name = "status")
+		private val status: InstructionReportStatus,
+		@Json(name = "errorCode")
+		private val errorCode: InstructionReportErrorCode? = null,
+		@Json(name = "instruction")
+		private val instruction: UpdateInstruction)

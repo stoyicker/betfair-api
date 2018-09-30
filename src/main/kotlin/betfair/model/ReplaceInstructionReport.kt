@@ -1,7 +1,13 @@
 package betfair.model
 
+import com.squareup.moshi.Json
+
 internal data class ReplaceInstructionReport(
-		val status: InstructionReportStatus,
-		val errorCode: ExecutionReportErrorCode? = null,
-		val cancelInstructionReport: CancelInstructionReport? = null,
-		val placeInstructionReport: PlaceInstructionReport? = null)
+		@Json(name = "status")
+		private val status: InstructionReportStatus,
+		@Json(name = "errorCode")
+		private val errorCode: ExecutionReportErrorCode? = null,
+		@Json(name = "cancelInstructionReport")
+		private val cancelInstructionReport: CancelInstructionReport? = null,
+		@Json(name = "placeInstructionReport")
+		private val placeInstructionReport: PlaceInstructionReport? = null)

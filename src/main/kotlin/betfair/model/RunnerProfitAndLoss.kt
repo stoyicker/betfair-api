@@ -1,7 +1,13 @@
 package betfair.model
 
+import com.squareup.moshi.Json
+
 internal data class RunnerProfitAndLoss(
-		val selectionId: SelectionId? = null,
-		val ifWin: Double? = null,
-		val ifLose: Double? = null,
-		val ifPlace: Double? = null)
+		@Json(name = "selectionId")
+		private val selectionId: SelectionId? = null,
+		@Json(name = "ifWin")
+		private val ifWin: Double? = null,
+		@Json(name = "ifLose")
+		private val ifLose: Double? = null,
+		@Json(name = "ifPlace")
+		private val ifPlace: Double? = null)

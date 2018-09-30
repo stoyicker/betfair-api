@@ -1,6 +1,11 @@
 package betfair.model
 
+import com.squareup.moshi.Json
+
 internal data class RunnerId(
-		val marketId: MarketId? = null,
-		val selectionId: SelectionId? = null,
-		val handicap: Handicap? = null)
+		@Json(name = "marketId")
+		private val marketId: MarketId? = null,
+		@Json(name = "selectionId")
+		private val selectionId: SelectionId? = null,
+		@Json(name = "handicap")
+		private val handicap: Handicap? = null)

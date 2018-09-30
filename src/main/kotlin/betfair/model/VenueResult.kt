@@ -1,5 +1,9 @@
 package betfair.model
 
+import com.squareup.moshi.Json
+
 internal data class VenueResult(
-		val venue: String? = null,
-		val marketCount: Int? = null)
+		@Json(name = "venue")
+		private val venue: String? = null,
+		@Json(name = "marketCount")
+		private val marketCount: Int? = null)
