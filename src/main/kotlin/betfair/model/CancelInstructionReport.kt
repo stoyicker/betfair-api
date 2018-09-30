@@ -5,12 +5,12 @@ import java.util.Date
 
 internal data class CancelInstructionReport(
 		@Json(name = "status")
-		val status: InstructionReportStatus,
+		private val status: InstructionReportStatus,
 		@Json(name = "errorCode")
-		val errorCode: InstructionReportErrorCode? = null,
+		private val errorCode: InstructionReportErrorCode? = null,
 		@Json(name = "instruction")
-		val instruction: CancelInstruction? = null,
+		private val instruction: CancelInstruction? = null,
 		@Json(name = "sizeCancelled")
-		val sizeCancelled: Double,
+		private val sizeCancelled: Double,
 		@Json(name = "cancelledDate")
-		val cancelledDate: Date? = null)
+		private val cancelledDate: Date? = null)

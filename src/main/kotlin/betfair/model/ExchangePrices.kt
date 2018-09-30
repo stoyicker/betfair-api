@@ -1,6 +1,11 @@
 package betfair.model
 
+import com.squareup.moshi.Json
+
 internal data class ExchangePrices(
-		val availableToBack: List<PriceSize>? = null,
-		val availableToLay: List<PriceSize>? = null,
-		val tradedVolume: List<PriceSize>? = null)
+		@Json(name = "availableToBack")
+		private val availableToBack: List<PriceSize>? = null,
+		@Json(name = "availableToLay")
+		private val availableToLay: List<PriceSize>? = null,
+		@Json(name = "tradedVolume")
+		private val tradedVolume: List<PriceSize>? = null)

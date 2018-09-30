@@ -1,5 +1,9 @@
 package betfair.model
 
+import com.squareup.moshi.Json
+
 internal data class ClearedOrderSummaryReport(
-		val clearedOrders: List<ClearedOrderSummary>,
-		val moreAvailable: Boolean)
+		@Json(name = "clearedOrders")
+		private val clearedOrders: List<ClearedOrderSummary>,
+		@Json(name = "moreAvailable")
+		private val moreAvailable: Boolean)

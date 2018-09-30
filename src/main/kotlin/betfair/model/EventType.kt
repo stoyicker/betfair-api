@@ -1,3 +1,9 @@
 package betfair.model
 
-internal data class EventType(val id: String? = null, val name: String? = null)
+import com.squareup.moshi.Json
+
+internal data class EventType(
+		@Json(name = "id")
+		private val id: String? = null,
+		@Json(name = "name")
+		private val name: String? = null)

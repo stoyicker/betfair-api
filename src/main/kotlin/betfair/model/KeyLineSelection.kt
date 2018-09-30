@@ -1,3 +1,9 @@
 package betfair.model
 
-internal data class KeyLineSelection(val selectionId: SelectionId? = null, val handicap: Handicap? = null)
+import com.squareup.moshi.Json
+
+internal data class KeyLineSelection(
+		@Json(name = "selectionId")
+		private val selectionId: SelectionId? = null,
+		@Json(name = "handicap")
+		private val handicap: Handicap? = null)

@@ -1,10 +1,19 @@
 package betfair.model
 
+import com.squareup.moshi.Json
+
 internal data class LimitOrder(
-		val size: Double,
-		val price: Double,
-		val persistenceType: PersistenceType,
-		val timeInForce: TimeInForce? = null,
-		val minFillSize: Size? = null,
-		val betTargetType: BetTargetType? = null,
-		val betTargetSize: Size? = null)
+		@Json(name = "size")
+		private val size: Double,
+		@Json(name = "price")
+		private val price: Double,
+		@Json(name = "persistenceType")
+		private val persistenceType: PersistenceType,
+		@Json(name = "timeInForce")
+		private val timeInForce: TimeInForce? = null,
+		@Json(name = "minFillSize")
+		private val minFillSize: Size? = null,
+		@Json(name = "betTargetType")
+		private val betTargetType: BetTargetType? = null,
+		@Json(name = "betTargetSize")
+		private val betTargetSize: Size? = null)

@@ -12,4 +12,5 @@ internal data class CancelExecutionReport(
 		@Json(name = "marketId")
 		private val marketId: String? = null,
 		@Json(name = "instructionReports")
-		private val instructionReports: List<CancelInstructionReport>? = null)
+		private val instructionReports: List<CancelInstructionReport>? = null) {
+}

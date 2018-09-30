@@ -1,3 +1,7 @@
 package betfair.model
 
-internal data class KeyLineDescription(val keyLine: List<KeyLineSelection>? = null)
+import com.squareup.moshi.Json
+
+internal data class KeyLineDescription(
+		@Json(name = "keyLine")
+		private val keyLine: List<KeyLineSelection>? = null)
