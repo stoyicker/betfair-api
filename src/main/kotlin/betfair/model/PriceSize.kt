@@ -1,5 +1,9 @@
 package betfair.model
 
+import com.squareup.moshi.Json
+
 internal data class PriceSize(
-		val price: Double,
-		val size: Double)
+		@Json(name = "price")
+		private val price: Double,
+		@Json(name = "size")
+		private val size: Double)

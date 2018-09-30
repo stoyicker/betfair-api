@@ -1,5 +1,9 @@
 package betfair.model
 
+import com.squareup.moshi.Json
+
 internal data class MarketRates(
-		val marketBaseRate: Double,
-		val discountAllowed: Boolean)
+		@Json(name = "marketBaseRate")
+		private val marketBaseRate: Double,
+		@Json(name = "discountAllowed")
+		private val discountAllowed: Boolean)

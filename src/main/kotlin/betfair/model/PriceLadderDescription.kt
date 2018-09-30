@@ -1,3 +1,7 @@
 package betfair.model
 
-internal data class PriceLadderDescription(val type: PriceLadderType? = null)
+import com.squareup.moshi.Json
+
+internal data class PriceLadderDescription(
+		@Json(name = "type")
+		private val type: PriceLadderType? = null)

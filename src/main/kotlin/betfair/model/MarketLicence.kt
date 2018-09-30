@@ -1,7 +1,13 @@
 package betfair.model
 
+import com.squareup.moshi.Json
+
 internal data class MarketLicence(
-		val wallet: String,
-		val rules: String? = null,
-		val rulesHasDate: Boolean? = null,
-		val clarifications: String? = null)
+		@Json(name = "wallet")
+		private val wallet: String,
+		@Json(name = "rules")
+		private val rules: String? = null,
+		@Json(name = "rulesHasDate")
+		private val rulesHasDate: Boolean? = null,
+		@Json(name = "clarifications")
+		private val clarifications: String? = null)

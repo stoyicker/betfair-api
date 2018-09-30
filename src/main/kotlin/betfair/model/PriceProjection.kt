@@ -1,7 +1,13 @@
 package betfair.model
 
+import com.squareup.moshi.Json
+
 internal data class PriceProjection(
-		val priceData: List<PriceData>? = null,
-		val exBestOffersOverrides: ExBestOffersOverrides? = null,
-		val virtualise: Boolean? = null,
-		val rolloverStakes: Boolean? = null)
+		@Json(name = "priceData")
+		private val priceData: List<PriceData>? = null,
+		@Json(name = "exBestOffersOverrides")
+		private val exBestOffersOverrides: ExBestOffersOverrides? = null,
+		@Json(name = "virtualise")
+		private val virtualise: Boolean? = null,
+		@Json(name = "rolloverStakes")
+		private val rolloverStakes: Boolean? = null)
