@@ -4,7 +4,7 @@ import betfair.Config
 import okhttp3.Interceptor
 import okhttp3.Response
 
-// TODO Make this trigger when I need it to (wrong auth is still 200)
+// TODO Generate a new sessionToken for this config and mark when I update it
 internal class AuthenticationInterceptor(private val config: Config) : Interceptor {
 	companion object {
 		const val HEADER_NAME_AUTHENTICATION = "X-Authentication"
