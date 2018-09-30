@@ -1,5 +1,9 @@
 package betfair.model
 
+import com.squareup.moshi.Json
+
 internal data class CancelInstruction(
-		val betId: String,
-		val sizeReduction: Double? = null)
+		@Json(name = "betId")
+		private val betId: String,
+		@Json(name = "sizeReduction")
+		private val sizeReduction: Double? = null)
