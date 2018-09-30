@@ -1,5 +1,6 @@
 package betfair.api
 
+import betfair.model.LoginResult
 import retrofit2.Call
 import retrofit2.http.Headers
 import retrofit2.http.POST
@@ -12,5 +13,7 @@ internal interface BotLoginApiService {
 
 	@POST("certlogin")
 	@Headers("Content-Type: application/x-www-form-urlencoded")
-	fun login(@Query("username") username: CharSequence, @Query("password") password: CharSequence): Call<String>
+	fun login(
+			@Query("username") username: CharSequence,
+			@Query("password") password: CharSequence): Call<LoginResult>
 }
