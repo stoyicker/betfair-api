@@ -3,26 +3,31 @@ package betfair.api
 import betfair.Config
 import okhttp3.Interceptor
 import okhttp3.Response
+import java.time.LocalDateTime
 
-// TODO Generate a new sessionToken for this config and mark when I update it
-internal class AuthenticationInterceptor(private val config: Config) : Interceptor {
+internal class AuthenticationInterceptor(
+		private val botLoginApiService: BotLoginApiService,
+		private val config: Config) : Interceptor {
 	companion object {
 		const val HEADER_NAME_AUTHENTICATION = "X-Authentication"
-		const val HEADER_NAME_AUTHENTICATION_ATTEMPTED = "X-Authentication-Attempted"
-		const val HEADER_VALUE_AUTHENTICATION_ATTEMPTED = "true"
+		const val AUTHENTICATION_THRESHOLD_MINUTES = 10L
 	}
 
-	override fun intercept(chain: Interceptor.Chain): Response? {
-		val request = chain.request()
-		return if (request.header(HEADER_NAME_AUTHENTICATION_ATTEMPTED) == null) {
-			chain.proceed(chain.request()).run {
-				config.sessionToken?.run {
-					newBuilder().apply {
-						addHeader(HEADER_NAME_AUTHENTICATION, this@run)
-						addHeader(HEADER_NAME_AUTHENTICATION_ATTEMPTED, HEADER_VALUE_AUTHENTICATION_ATTEMPTED)
-					}.build()!!
-				} ?: this!!
-			}
-		} else null
+	override fun intercept(chain: Interceptor.Chain): Response {
+		updateSessionToken()
+		return chain.proceed(chain.request()).run {
+			config.sessionToken?.let {
+				newBuilder().apply {
+					addHeader(HEADER_NAME_AUTHENTICATION, it)
+				}.build()!!
+			} ?: this!!
+		}
+	}
+
+	private fun updateSessionToken() {
+		if (config.sessionToken == null ||
+				config.lastSessionTokenUpdate.plusMinutes(AUTHENTICATION_THRESHOLD_MINUTES).isAfter(LocalDateTime.now())) {
+			config.sessionToken = botLoginApiService.login(config.username, config.password).execute().body()?.sessionToken
+		}
 	}
 }
