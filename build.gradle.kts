@@ -19,6 +19,7 @@ dependencies {
     implementation(kotlin("stdlib-jdk8"))
     implementation(group = "com.squareup.retrofit2", name = "retrofit", version = "2.4.0")
     implementation(group = "com.squareup.retrofit2", name = "converter-moshi", version = "2.4.0")
+    implementation(group = "com.squareup.retrofit2", name = "adapter-rxjava2", version = "2.4.0")
     implementation(group = "com.squareup.moshi", name = "moshi-kotlin", version = "1.7.0")
     implementation(group = "com.squareup.moshi", name = "moshi-adapters", version = "1.7.0")
 }
